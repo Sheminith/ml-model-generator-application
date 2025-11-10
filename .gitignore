@@ -1,5 +1,8 @@
 # ============================ Gitignore Boilerplate for Django ================================= #
 
+# Project Files #
+test_code.py
+
 # Django #
 *.log
 *.pot

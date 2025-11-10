@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %} Train Model {% endblock title %}
+
+{% block content %}
+
+<section>
+    <h1>Train Model Page</h1>
+
+    <h3>Dataset Name: {{dataset.name}}</h3>
+    <h3>Target Column: {{dataset.target_column}}</h3>
+</section>
+
+{% endblock content %}

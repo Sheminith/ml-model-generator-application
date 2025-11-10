@@ -5,7 +5,14 @@
 {% block content %}
 
 <section>
-    <h1>Hello World! Hello Hello</h1>
+    <h1>Upload Your CSV File</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        {{form.as_p}}
+        <input type="submit" name="Upload">
+    </form>
 </section>
 
 {% endblock content %}
