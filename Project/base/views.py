@@ -20,10 +20,9 @@ def upload_dataset(request):
 
 def train_model(request, pk):
     dataset = Dataset.objects.get(id=pk)
-
-    # Take the dataset and remove unnecessary columns
+    
     raw_df = pd.read_csv(dataset.csv_file.path)
 
-    # stopped here
+    # stopped here I ewant to implement all the chech functions in utils.py file
     context = {'dataset': dataset}
     return render(request, 'base/train_model_page.html', context)

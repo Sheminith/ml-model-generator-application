@@ -2,6 +2,9 @@
 
 # Project Files #
 test_code.py
+test_jupyter.ipynb
+test_model_types_and_datasets.docx
+.test_datasets/
 
 # Django #
 *.log
