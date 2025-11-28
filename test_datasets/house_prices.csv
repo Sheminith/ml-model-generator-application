@@ -1,8 +1,8 @@
 date,price,bedrooms,bathrooms,sqft_living,sqft_lot,floors,waterfront,view,condition,sqft_above,sqft_basement,yr_built,yr_renovated,street,city,statezip,country,price,test_col,name,Address,Phone Number
 5/2/2014 0:00,313000,3,1.5,1340,7912,1.5,0,0,3,1340,0,1955,2005,18810 Densmore Ave N,Shoreline,WA 98133,USA,,,Michele,,752655918
-5/2/2014 0:00,2384000,5,2.5,3650,9050,2,0,4,5,3370,280,1921,0,709 W Blaine St,Seattle,WA 98119,USA,dsdfssdfs,,Sharon,"Edirisinghe Stores Bare, CP Pura, Minneriya",
-5/2/2014 0:00,342000,3,2,1930,11947,1,0,0,4,1930,0,1966,0,26206-26214 143rd Ave SE,Kent,WA 98042,USA,,,,,
-5/2/2014 0:00,420000,3,2.25,2000,8030,1,0,0,4,1000,1000,1963,0,857 170th Pl NE,Bellevue,WA 98008,USA,,,,,
+5/2/2014 0:00,2384000,5,2.5,3650,9050,2,0,4,5,3370,280,1921,0,709 W Blaine St,Seattle,WA 98119,USA,dsdfssdfs,'12345',Sharon,"Edirisinghe Stores Bare, CP Pura, Minneriya",
+5/2/2014 0:00,342000,3,2,1930,11947,1,0,0,4,1930,0,1966,0,26206-26214 143rd Ave SE,Kent,WA 98042,USA,,'34',,,
+5/2/2014 0:00,420000,3,2.25,2000,8030,1,0,0,4,1000,1000,1963,0,857 170th Pl NE,Bellevue,WA 98008,USA,,'55',,,
 5/2/2014 0:00,550000,4,2.5,1940,10500,1,0,0,4,1140,800,1976,1992,9105 170th Ave NE,Redmond,WA 98052,USA,,,,,
 5/2/2014 0:00,490000,2,1,880,6380,1,0,0,3,880,0,1938,1994,522 NE 88th St,Seattle,WA 98115,USA,,,,,
 5/2/2014 0:00,335000,2,2,1350,2560,1,0,0,3,1350,0,1976,0,2616 174th Ave NE,Redmond,WA 98052,USA,,,Malindu,,

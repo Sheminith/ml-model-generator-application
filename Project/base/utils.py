@@ -25,9 +25,35 @@ def remove_empty_or_constant_cols(dataset):
 
     return df
 
-def remove_sensitive_cols(dataset, threshold=0.7):
+def handle_missing_value_cols(dataset):
     """
     03)
+    Remove columns with some values according to most preffered thresholds.
+        Dataset > 50,000 - Remove if 70-80% missing
+        Dataset < 5000 - Remove if 20-30% missing
+    """
+    dataset_rows = len(dataset)
+
+    # Handle instances to remove a column completely
+    for col in dataset.columns:
+        missing_rows = dataset[col].isna().sum()
+        missing_ratio = missing_rows / dataset_rows
+
+        # Dataset with more than 50,000 rows
+        if dataset_rows > 50000:
+            if missing_ratio >= 0.75: # 75% missing
+                dataset.drop(columns=[col], inplace=True)
+        
+        # Dataset with less than 5000 rows
+        if dataset_rows < 5000:
+            if missing_ratio >= 0.25: # 25% missing
+                dataset.drop(columns=[col], inplace=True)
+
+    return dataset
+
+def remove_sensitive_cols(dataset, threshold=0.7):
+    """
+    04)
     Automatically detect columns with sensitive personal information such as:
         - Phone numbers
         - Emails
@@ -93,23 +119,20 @@ def remove_sensitive_cols(dataset, threshold=0.7):
     
     return df
 
-def fix_data_types(datasets): # continue from here... I stopped here...
+def fix_data_types(dataset):
     """
-    04)
+    05)
     Fix data types of columns where columns contain string with numerical data. (e.g. '12345')
     """
-    pass
+    df = dataset.copy()
 
-def handle_missing_values(dataset):
-    """
-    03)
-    Remove columns with some values according to most preffered thresholds.
+    for col in df.columns:
+        # check if the column is an object or numeric
+        if df[col].dtype == 'object':
+            converted = pd.to_numeric(df[col].str.replace(',',''), errors='coerce')
+            
+            # If conversion is successful for atleast 1 value, convert all
+            if converted.notna().sum() > 0:
+                df[col] = converted
 
-    Dataset > 50,000 - Remove if 70-80% missing
-    Dataset < 5000 - Remove if 20-30% missing
-
-    If not,
-    if the column is numeric, fill empty cells with the mean.
-    if the column is categorical, handle accordingly.
-    """
-    pass
+    return df
