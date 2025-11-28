@@ -1,5 +1,9 @@
 import pandas as pd
+from sklearn.model_selection import train_test_split
 
+# DATETIME DEPENDENCY has to be implemented!
+
+# ======================================= DATA CLEAN FUNCTIONS ====================================== #
 def remove_duplicated_cols(dataset):
     """
     01)
@@ -136,3 +140,15 @@ def fix_data_types(dataset):
                 df[col] = converted
 
     return df
+
+# ========================================== MAIN FUNCTIONS ========================================== #
+def perform_sampling(dataset, sampling_threshold, sampling_fraction):
+    if len(dataset) >= sampling_threshold:
+        dataset = dataset.sample(frac=sampling_fraction).copy()
+    return dataset
+
+def train_val_test_split(dataset, test_size, val_size):
+    train_val_df, test_df = train_test_split(dataset, test_size=test_size, random_state=42)
+    train_df, val_df = train_test_split(dataset, test_size=val_size, random_state=42)
+
+    return train_df, val_df, test_df
